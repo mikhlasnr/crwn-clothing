@@ -1,5 +1,5 @@
 import React from "react";
-import "./collection-item.styles.scss";
+import "./CollectionItem.scss";
 function CollectionItem({ id, name, price, imageUrl }) {
   return (
     <div className="collection-item ">

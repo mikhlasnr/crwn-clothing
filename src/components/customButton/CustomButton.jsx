@@ -1,5 +1,5 @@
 import React from "react";
-import "./customButton.styles.scss";
+import "./CustomButton.scss";
 
 function CustomButton({ children, isGoogleSignIn, ...otherProps }) {
   return (

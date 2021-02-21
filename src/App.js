@@ -3,11 +3,11 @@ import { Switch, Route } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./firebase/firebase.util";
 import "./App.css";
 
-import Header from "./components/header/header.component";
-import HomePage from "./pages/homepage/homePage.component";
-import ShopPage from "./pages/shop/shop.component";
-import LogRegPage from "./pages/logRegPage/logRegPage.component";
-import NotFound from "./pages/404notFound/notFound.component";
+import Header from "./components/header/Header";
+import HomePage from "./pages/homepage/HomePage";
+import ShopPage from "./pages/shop/ShopPage";
+import LogRegPage from "./pages/logRegPage/LogRegPage";
+import NotFound from "./pages/404notFound/NotFound";
 
 class App extends Component {
   constructor() {

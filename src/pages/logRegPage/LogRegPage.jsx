@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./logRegPage.style.scss";
-import SignIn from "../../components/signIn/signIn.component";
+import "./LogRegPage.scss";
+import SignIn from "../../components/signIn/SignIn";
 class LogRegPage extends Component {
   render() {
     return (

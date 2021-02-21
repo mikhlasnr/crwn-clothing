@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import { auth } from "../../firebase/firebase.util";
-import "./header.styles.scss";
+import "./Header.scss";
 
 const Header = ({ currentUser }) => {
   return (
