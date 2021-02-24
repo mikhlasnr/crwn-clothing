@@ -21,7 +21,8 @@ class SignIn extends Component {
       await auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: "", password: "" });
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      alert(error.message);
     }
   };
 
@@ -55,7 +56,11 @@ class SignIn extends Component {
           />
           <div className="buttons">
             <CustomButton type="submit">sign in</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn={true}>
+            <CustomButton
+              type="button"
+              onClick={signInWithGoogle}
+              isGoogleSignIn={true}
+            >
               Sign in with Google
             </CustomButton>
           </div>
