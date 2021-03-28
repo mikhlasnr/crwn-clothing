@@ -1,3 +1,5 @@
+//! this file for select data from reducer
+//! and called in mapTopProps
 import { createSelector } from "reselect";
 
 const selectCart = state => state.cart;

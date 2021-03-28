@@ -12,11 +12,13 @@ const config = {
   measurementId: "G-X53XFM7TF1",
 };
 
+// this function is called in App.js
+// method for create user profile document
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  //If userAuth NULL will return nothing
+  //! If the user is already registered
   if (!userAuth) return;
 
-  // If userAuth no NULL
+  //! the user is not yet registered
   const userRef = firestore.doc(`users/${userAuth.uid}`); // get userRef
   const snapShot = await userRef.get(); // to check userRef exist or not
 
@@ -42,12 +44,13 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+export const auth = firebase.auth(); // GET auth from firebase
+export const firestore = firebase.firestore(); // Get firestore from firebase
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
+const provider = new firebase.auth.GoogleAuthProvider(); // get google auth provider from auth
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+provider.setCustomParameters({ prompt: "select_account" }); // set custom google auth
+
+export const signInWithGoogle = () => auth.signInWithPopup(provider); // export method signInWithGoogle
 
 export default firebase;

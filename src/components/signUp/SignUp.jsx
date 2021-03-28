@@ -17,17 +17,21 @@ class SignUp extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     const { displayName, email, password, confirmPassword } = this.state;
+
+    // register user to Authentication
     if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
     }
 
     try {
+      // Store data user to firestore
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
         password
       );
 
+      // Store data user to firestore
       await createUserProfileDocument(user, { displayName });
       this.setState({
         displayName: "",
