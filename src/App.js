@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+
 import { Switch, Route, Redirect } from "react-router-dom";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase.util";
+
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.action";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+
 import "./App.css";
 
 import Header from "./components/header/Header";
@@ -21,7 +25,7 @@ class App extends Component {
     const { setCurrentUser } = this.props;
 
     // subsribe Authentication
-    // so we will know user login or not
+    // so we will uptodate with auth
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);

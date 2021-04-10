@@ -12,12 +12,14 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  collections => Object.keys(collections).map(key => collections[key])
+  collections =>
+    collections ? Object.keys(collections).map(key => collections[key]) : []
 );
 
+// memozie is method to save the data to the local storage
+// so if its already exist the component will not re render
 export const selectCollection = memoize(collectionParam =>
-  createSelector(
-    [selectCollections],
-    collections => collections[collectionParam]
+  createSelector([selectCollections], collections =>
+    collections ? collections[collectionParam] : null
   )
 );
