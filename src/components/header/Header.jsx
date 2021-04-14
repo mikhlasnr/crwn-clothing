@@ -7,7 +7,6 @@ import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import { auth } from "../../firebase/firebase.util";
-import "./Header.scss";
 
 import CartIcon from "../cartIcon/CartIcon";
 import CartDropdown from "../cart/CartDropdown";
